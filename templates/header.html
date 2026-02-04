@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{AUTHOR}}">
+    <meta name="description" content="{{SITE_DESCRIPTION}}">
+    <title>{{TITLE}} - {{SITE_TITLE}}</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/blog/feed.xml">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="/">{{SITE_TITLE}}</a></h1>
+            <nav>
+{{NAV}}
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+      <article>
+        <header class="post-meta">
+          <h1>{{TITLE}}</h1>
+          <p class="meta">
+            <time>{{DATE}}</time>
+            · <span class="author">{{AUTHOR}}</span>
+          </p>
+        </header>
+        {{CONTENT}}
+      </article>
+    </main>
