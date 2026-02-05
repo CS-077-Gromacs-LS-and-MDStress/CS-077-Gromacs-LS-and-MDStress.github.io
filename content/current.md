@@ -32,12 +32,12 @@ at OSU.
 
 - Focusing on:
   - Porting Gromacs-LS from v2016.3 of Gromacs to v2025.4
-  - Adivsing team members on:
-    - Implementation of automatic-differentiation into the
-      [MDStress](https://vanegaslab.org/software) library.
-    - Performance profiling of MDStress library, including:
-      - Actual CPU time and memory space
-      - Interpretation of compiler generated assembly
+- Advising team members on:
+  - Implementation of automatic-differentiation into the
+    [MDStress](https://vanegaslab.org/software) library.
+  - Performance profiling of MDStress library, including:
+    - Actual CPU time and memory space
+    - Interpretation of compiler generated assembly
 
 ## [verso_2](https://git.chappelle.dev/verso2/log.html)
 
@@ -50,6 +50,11 @@ Currently:
   capabilities
 - Exploring ways to integrate my [stagit](https://git.chappelle.dev) instance
   into the site, as well as other cool bonuses
+
+Current bugs:
+
+- RSS feed is not really up to snuff
+- Date/Timestamp management needs to be thought about harder
 
 ## Computer Architecture
 
