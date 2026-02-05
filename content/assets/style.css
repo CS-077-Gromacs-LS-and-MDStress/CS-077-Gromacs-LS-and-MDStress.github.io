@@ -1,0 +1,68 @@
+/* Layout & Typography */
+html { 
+    margin: 1em auto; 
+    max-width: 42em; 
+    font-family: sans-serif; 
+    line-height: 1.5;
+}
+body { 
+    margin: auto 8px 20px 8px; 
+    background: #fff; 
+    color: #000;
+}
+
+/* Header and Navigation (Table-based) */
+header nav table { width: 100%; border-collapse: collapse; border}
+.logo img { max-width: 3em; margin: 0; }
+.logo pre { background-color: transparent; border: none; padding: 0; margin: 0;
+    overflow: hidden; height: auto; width: auto; line-height: 1; letter-spacing: 0;
+    font-family: monospace; display: inline-block; vertical-align: middle; }
+.logo a { color: #000 !important; text-decoration: none; display: inline-block; }
+.logo a:hover { color: #000; background-color: yellow; text-decoration: none; }
+.links { text-align: right; font-weight: bold; }
+.links a { font-weight: bold; color: black; margin-left: 10px; }
+
+
+/* Content Headers */
+h1 { font-size: 1.8em; text-align: center; margin: 1em 0; }
+h2 { font-size: 1.6em; margin-top: 1.5em; }
+h3 { font-size: 1.05em; }
+
+/* Metadata line */
+.meta { 
+    text-align: center; 
+    font-style: italic; 
+    color: #555; 
+    margin-bottom: 2em; 
+}
+
+/* Links */
+a { color: #000; text-decoration: underline; }
+a:hover { background-color: yellow; }
+
+/* Code Blocks */
+pre {  
+    background-color: #eeeeee; 
+    border: 2px solid #000;
+    padding: 6px; 
+    overflow-x: auto; 
+}
+code { background-color: #eeeeee; padding: 2px; font-family: monospace; }
+pre code { padding: 0px; background: none; }
+
+/* Tables (Post lists/File lists) */
+table { width: 100%; border-collapse: collapse; }
+#log tr:hover td, #files tr:hover td { background-color: #eeeeee; }
+#files td { font-family: monospace; font-size: 1.1em; padding: 4px 0; }
+
+/* Footer */
+footer { margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em; }
+footer table { font-style: italic; width: 100%; }
+.hosted { text-align: right; }
+
+/* Print settings */
+@media print {
+  .page-break { break-before: always; }
+  img, p { break-inside: avoid; }
+  h1, h2, h3 { break-after: avoid; }
+}

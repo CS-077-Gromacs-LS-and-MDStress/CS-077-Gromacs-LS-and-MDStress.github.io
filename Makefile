@@ -1,4 +1,4 @@
-# Makefile for framework
+# Makefile for verso_2
 
 .POSIX:
 

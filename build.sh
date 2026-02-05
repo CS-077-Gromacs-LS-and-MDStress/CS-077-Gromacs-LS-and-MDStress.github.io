@@ -1,15 +1,41 @@
 #!/bin/sh
-# verso2 - suckless web framework
-# A minimal static site generator
+# ============================================================================
+# ██╗   ██╗███████╗██████╗ ███████╗ ██████╗         ██████╗ 
+# ██║   ██║██╔════╝██╔══██╗██╔════╝██╔═══██╗        ╚════██╗
+# ██║   ██║█████╗  ██████╔╝███████╗██║   ██║         █████╔╝
+# ╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║██║   ██║        ██╔═══╝ 
+#  ╚████╔╝ ███████╗██║  ██║███████║╚██████╔╝███████╗███████╗
+#   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚══════╝ 
+# verso_2 - web framework?
+# ============================================================================
+#
+# Copyright (C) 2026 Binkd.
+#
+# This file is part of verso_2.
+#
+# verso_2 is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# verso_2 is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+# details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with verso_2. If not, see <https://www.gnu.org/licenses/>.
+#
+# =============================================================================
 
 set -e
 
 # Load configuration
-if [ ! -f "./web.conf" ]; then
-    echo "Error: web.conf not found in current directory"
+if [ ! -f "./verso.conf" ]; then
+    echo "Error: verso.conf not found in current directory"
     exit 1
 fi
-. ./web.conf
+. ./verso.conf
 
 # Helper functions
 log() {
@@ -83,7 +109,8 @@ substitute_vars() {
     local date="$4"
     local nav="$5"
     local author="$6"
-    
+    local show_meta="$7"
+
     # First pass: substitute simple variables
     sed -e "s|{{TITLE}}|${title}|g" \
         -e "s|{{SITE_TITLE}}|${SITE_TITLE}|g" \
@@ -92,16 +119,23 @@ substitute_vars() {
         -e "s|{{AUTHOR}}|${author}|g" \
         -e "s|{{DATE}}|${date}|g" \
         "$template" | while IFS= read -r line; do
-            # Handle {{NAV}} substitution
-            if echo "$line" | grep -q '{{NAV}}'; then
-                echo "$nav"
-            # Handle {{CONTENT}} substitution
-            elif echo "$line" | grep -q '{{CONTENT}}'; then
-                cat "$content"
-            else
-                echo "$line"
+        
+        # 1. Handle metadata toggle
+        if echo "$line" | grep -q '{{META_LINE}}'; then
+            if [ "$show_meta" != "no" ]; then
+                echo "<p class=\"meta\">$author --- $date</p>"
             fi
-        done
+        # 2. Handle {{NAV}} substitution
+        elif echo "$line" | grep -q '{{NAV}}'; then
+            echo "$nav"
+        # 3. Handle {{CONTENT}} substitution
+        elif echo "$line" | grep -q '{{CONTENT}}'; then
+            cat "$content"
+        # 4. Otherwise, print the line as is
+        else
+            echo "$line"
+        fi
+    done
 }
 
 # Calculate relative path back to root
@@ -127,12 +161,14 @@ build_page() {
     local nav
     local tmpfile
     local author
+    local show_meta
     
     rel_src=$(echo "$src" | sed "s|^${INPUT_DIR}/||")
     title=$(extract_title "$src")
     date=$(extract_date "$src")
     nav=$(generate_nav)
     author=$(extract_author "$src")
+    show_meta=$(extract_meta "$src" "show_meta")
 
     [ -z "$author" ] && author="$AUTHOR"
     
@@ -156,7 +192,7 @@ build_page() {
     ' "$src" | $MD_PROCESSOR $MD_FLAGS > "$tmpfile"
     
     # Substitute and write output
-    substitute_vars "$TEMPLATE_DIR/header.html" "$title" "$tmpfile" "$date" "$nav" "$author" > "$dst"
+    substitute_vars "$TEMPLATE_DIR/header.html" "$title" "$tmpfile" "$date" "$nav" "$author" "$show_meta"> "$dst"
     
     # Add footer with substitution
     sed -e "s|{{AUTHOR}}|${AUTHOR}|g" \
@@ -170,9 +206,6 @@ build_page() {
 # Generate navigation menu
 generate_nav() {
     local nav_html=""
-    
-    # Add home link
-    nav_html="$nav_html                <a href=\"/\">Home</a>"
     
     # Find all items in root of INPUT_DIR (both files and directories)
     (
@@ -208,62 +241,67 @@ generate_nav() {
                 nav_html="$nav_html                <a href=\"/$slug.html\">$title</a>"
             fi
         fi
+        
         echo "$nav_html"
         nav_html=""
     done
+	
+    echo "                <a href=\"/feed.xml\">RSS Feed</a>"
+    echo "		  <a href=\"${AUTHOR_GIT_HOST}\">Git</a>"
 }
 
-# Generate automatic directory index
 generate_directory_index() {
     local dir="$1"
     local output="$2"
     local dirname=$(basename "$dir")
     local title
     local index_md
-    
+
     # Convert dirname to title
     title=$(echo "$dirname" | sed 's/[-_]/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1')
-    
+
     log "Auto-generating index for $dirname..."
-    
+
     index_md=$(mktemp)
-    
-    echo "# $title" > "$index_md"
+
+    # ADD THIS BLOCK HERE:
+    cat << EOF > "$index_md"
+---
+title: $title
+show_meta: no
+---
+EOF
+    # Note: Use >> for the rest so we don't overwrite the frontmatter!
+
     echo "" >> "$index_md"
-    
-    # Find all markdown files in this directory (excluding index.md)
-    find "$dir" -maxdepth 1 -name "*.md" ! -name "index.md" -type f | sort | while read f; do
+
+    # Find all markdown files, extract date, sort, then format into markdown
+    find "$dir" -maxdepth 1 -name "*.md" ! -name "index.md" -type f | while read f; do
         file_title=$(extract_title "$f")
         date=$(extract_date "$f")
         slug=$(basename "$f" .md)
-        
+        # Output: date|title|slug for sorting
+        echo "${date}|${file_title}|${slug}"
+    done | sort -r | while IFS='|' read date title slug; do
         if [ -n "$date" ]; then
-            echo "* $date [$file_title]($slug/)" >> "$index_md"
+            echo "* $date [$title]($slug/)" >> "$index_md"
         else
-            echo "* [$file_title]($slug/)" >> "$index_md"
+            echo "* [$title]($slug/)" >> "$index_md"
         fi
     done
-    
-    # Find subdirectories
-    find "$dir" -maxdepth 1 -type d ! -path "$dir" | sort | while read subdir; do
-        subdirname=$(basename "$subdir")
-        # Try to get title from subdir's index.md
-        if [ -f "$subdir/index.md" ]; then
-            subdir_title=$(extract_title "$subdir/index.md")
-        else
-            subdir_title=$(echo "$subdirname" | sed 's/[-_]/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1')
-        fi
-        echo "* [$subdir_title]($subdirname/)" >> "$index_md"
-    done
-    
+
+    # ... (rest of the subdirectory finding logic)
+
     # Build the page
     build_page "$index_md" "$output"
-    
     rm "$index_md"
 }
 
 extract_article_html() {
-	sed -n '/<article>/,/<\/article>/p' "$1"
+    sed -n '/<article>/,/<\/article>/ {
+        /<header class="post-meta">/,/<\/header>/d
+        p
+    }' "$1"
 }
 
 # Generate blog index
@@ -271,25 +309,29 @@ generate_blog_index() {
     local blog_src="$INPUT_DIR/$BLOG_DIR"
     local blog_dst="$OUTPUT_DIR/$BLOG_DIR"
     local index_md
-    
+
     [ ! -d "$blog_src" ] && return
-    
+
     log "Generating blog index..."
-    
+
     index_md=$(mktemp)
-    
-    echo "# Blog" > "$index_md"
+
+    # Use > for the first line to create/clear, then >> for everything else
+    echo "---" > "$index_md"
+    echo "show_meta: no" >> "$index_md"
+    echo "title: Blog" >> "$index_md"
+    echo "---" >> "$index_md"
     echo "" >> "$index_md"
-    echo "[RSS Feed](feed.xml)" >> "$index_md"
+    echo "# Blog" >> "$index_md"
     echo "" >> "$index_md"
-    
+    echo "[RSS Feed](../feed.xml)" >> "$index_md"
+    echo "" >> "$index_md"
+
     # Find all blog posts, sort by date descending
     find "$blog_src" -name "*.md" ! -name "index.md" | while read f; do
         date=$(extract_date "$f")
         title=$(extract_title "$f")
         slug=$(basename "$f" .md)
-        
-        # Output: date|title|slug for sorting
         echo "${date}|${title}|${slug}"
     done | sort -r | while IFS='|' read date title slug; do
         if [ "$CLEAN_URLS" = "yes" ]; then
@@ -298,20 +340,20 @@ generate_blog_index() {
             echo "* $date [$title]($slug.html)" >> "$index_md"
         fi
     done
-    
+
     # Build the index page
     if [ "$CLEAN_URLS" = "yes" ]; then
         build_page "$index_md" "$blog_dst/index.html"
     else
         build_page "$index_md" "$blog_dst.html"
     fi
-    
+
     rm "$index_md"
 }
 
 # Generate RSS feed
 generate_rss() {
-    local rss_file="$OUTPUT_DIR/$BLOG_DIR/feed.xml"
+    local rss_file="$OUTPUT_DIR/feed.xml"
     local blog_src="$INPUT_DIR/$BLOG_DIR"
     
     [ ! -d "$blog_src" ] && return
@@ -336,8 +378,9 @@ EOF
     date=$(extract_date "$f")
     title=$(extract_title "$f")
     slug=$(basename "$f" .md)
-    author=$(extra_author "$file")
+    author=$(extract_author "$f")
     [ -z "$author" ] && author="$AUTHOR"
+
 
     echo "${date}|${title}|${slug}|${f}"
 done | sort -r | head -n 20 | while IFS='|' read date title slug file; do
@@ -356,7 +399,7 @@ done | sort -r | head -n 20 | while IFS='|' read date title slug file; do
 <link>${url}</link>
 <guid>${url}</guid>
 <pubDate>${date}</pubDate>
-<dc:creator>${author}</dc:creator>
+<author>${SITE_AUTHOR_EMAIL} (${AUTHOR})</author>
 <description><![CDATA[
 ${body_html}
 ]]></description>
@@ -478,7 +521,7 @@ build_all() {
 main() {
     # Check for markdown processor
     if ! command -v "$MD_PROCESSOR" > /dev/null 2>&1; then
-        error "Markdown processor '$MD_PROCESSOR' not found. Install it or change MD_PROCESSOR in web.conf"
+        error "Markdown processor '$MD_PROCESSOR' not found. Install it or change MD_PROCESSOR in verso.conf"
     fi
     
     # Check templates exist
