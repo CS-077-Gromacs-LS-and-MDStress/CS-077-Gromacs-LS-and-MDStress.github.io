@@ -66,3 +66,70 @@ footer table { font-style: italic; width: 100%; }
   img, p { break-inside: avoid; }
   h1, h2, h3 { break-after: avoid; }
 }
+
+/* Song Gallery Stuff */
+.song-gallery {
+    display: grid;
+    /* Fits roughly 3 columns in your 42em max-width */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.song-card {
+    background: #fff;
+    border: 2px solid #000; /* Match pre block border */
+    padding: 8px; /* Give it that nested border look */
+    display: flex;
+    flex-direction: column;
+}
+
+.song-card:hover {
+    background-color: #eeeeee; /* Match table hover effect */
+    outline: 2px solid yellow; /* Hint at the link hover style */
+}
+
+.song-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 1px solid #000; /* Hard edge on art */
+    margin-bottom: 8px;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.song-title {
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.2;
+    display: block;
+}
+
+.artist-name {
+    color: #555; /* Match .meta color */
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.song-link {
+    margin-top: auto;
+    text-align: center;
+    font-weight: bold;
+    font-family: monospace; /* Match your logo/code style */
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #000;
+    padding: 4px;
+    background: #fff;
+    color: #000;
+}
+
+.song-link:hover {
+    background-color: yellow; /* The classic Verso 2 hover */
+}
