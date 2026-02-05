@@ -5,7 +5,7 @@ show_meta: no
 
 Feel free to reach out:
 
-- Email: [nathaniel@chappelle.dev](mailto:nathaniel@chappelle.dev)
+- Email: nathaniel at any of my domains.
   - 37AF 9835 E4CD AC40
 - XMPP: [binkd@xmpp.is](xmpp:binkd@xmpp.is)
 

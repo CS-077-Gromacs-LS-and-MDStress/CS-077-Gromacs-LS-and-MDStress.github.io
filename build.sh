@@ -399,7 +399,7 @@ done | sort -r | head -n 20 | while IFS='|' read date title slug file; do
 <link>${url}</link>
 <guid>${url}</guid>
 <pubDate>${date}</pubDate>
-<author>${SITE_AUTHOR_EMAIL} (${AUTHOR})</author>
+<author>${AUTHOR}</author>
 <description><![CDATA[
 ${body_html}
 ]]></description>
