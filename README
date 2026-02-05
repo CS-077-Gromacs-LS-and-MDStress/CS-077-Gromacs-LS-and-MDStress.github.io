@@ -6,10 +6,20 @@
   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚══════╝
 
 Verso_2
-======
+=======
 
-After creating Verso, which aimed for a spa-style site with heavy utilization of javascript, I have come here to reform my ways and offer up a simpler solution.
+After creating Verso, which aimed for a spa-style site with heavy utilization 
+of javascript, I have come here to reform my ways and offer up a simpler 
+solution.
 
-Introducing verso_2. It should be self explanatory on how to use it based on the example here (which is also my personal site). 
+Introducing verso_2. It should be self explanatory on how to use it based on 
+the example here (which is also my personal site). 
 
 Dependent on the lowdown markdown parser. 
+
+License
+-------
+
+The software in this repository is licensed under the GPLv3, which can be 
+found in LICENSE. The content in this repository is licensed under CC-BY-4.0 
+which can be found in content/LICENSE.
