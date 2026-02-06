@@ -3,7 +3,6 @@ show_meta: false
 title: Listen
 ---
 
-
 An overview of music and podcasts I currently have on repeat.
 
 ## Music
@@ -19,20 +18,6 @@ An overview of music and podcasts I currently have on repeat.
     Sneaker Pimps
    </span>
    <a class="song-link" href="https://music.youtube.com/watch?v=x6X8jHH-weE&amp;si=NffQQw6geBuBVnN4">
-    Listen
-   </a>
-  </div>
- </div>
- <div class="song-card">
-  <img alt="Rock That Body Album Art" src="/assets/covers/rockthatbody.jpg"/>
-  <div class="song-info">
-   <span class="song-title">
-    Rock That Body
-   </span>
-   <span class="artist-name">
-    The Black Eyed Peas
-   </span>
-   <a class="song-link" href="https://music.youtube.com/watch?v=ywfq2ne7rKE&amp;si=fg-4mu1UiN3y3wi0">
     Listen
    </a>
   </div>
@@ -108,3 +93,4 @@ An overview of music and podcasts I currently have on repeat.
   </div>
  </div>
 </section>
+
