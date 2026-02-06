@@ -18,6 +18,20 @@ An overview of music and podcasts I currently have on repeat.
    <span class="artist-name">
     testing
    </span>
+   <a class="song-link" href="https://test.com">
+    Listen
+   </a>
+  </div>
+ </div>
+ <div class="song-card">
+  <img alt="test Album Art" src="/assets/covers/test.jpg"/>
+  <div class="song-info">
+   <span class="song-title">
+    test
+   </span>
+   <span class="artist-name">
+    testing
+   </span>
    <a class="song-link" href="https://hello.com">
     Listen
    </a>
