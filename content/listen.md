@@ -66,4 +66,3 @@ An overview of music and podcasts I currently have on repeat.
   </div>
  </div>
 </section>
-
