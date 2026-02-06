@@ -1,5 +1,5 @@
 ---
-show_meta: false
+show_meta: no
 title: Listen
 ---
 
@@ -93,4 +93,3 @@ An overview of music and podcasts I currently have on repeat.
   </div>
  </div>
 </section>
-
