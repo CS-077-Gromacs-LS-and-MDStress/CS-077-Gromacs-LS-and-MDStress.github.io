@@ -3,8 +3,8 @@ show_meta: false
 title: Listen
 ---
 
-
 An overview of music and podcasts I currently have on repeat.
+[Check out](/blog/listen/) how I manage this page.
 
 ## Music
 
@@ -66,3 +66,4 @@ An overview of music and podcasts I currently have on repeat.
   </div>
  </div>
 </section>
+
