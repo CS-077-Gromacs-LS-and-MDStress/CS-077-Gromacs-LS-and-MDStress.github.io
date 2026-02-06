@@ -1,13 +1,28 @@
 ---
-show_meta: no
+show_meta: false
 title: Listen
 ---
 
-An overview of music and podcasts I currently have on repeat.
+
+An overview of music and podcasts I currently have on repeat. [Checkout](blog/listen-cms/) how I manage this page to keep it current, without have to touch a single piece of code (until it breaks).
 
 ## Music
 
 <section class="song-gallery">
+ <div class="song-card">
+  <img alt="Maggot Brain Album Art" src="/assets/covers/maggotbrain.jpg"/>
+  <div class="song-info">
+   <span class="song-title">
+    Maggot Brain
+   </span>
+   <span class="artist-name">
+    Funkadelic
+   </span>
+   <a class="song-link" href="https://music.youtube.com/watch?v=xby5467EbdU&amp;si=Ia0gJKG1iEUE_tEt">
+    Listen
+   </a>
+  </div>
+ </div>
  <div class="song-card">
   <img alt="Becoming X Album Art" src="/assets/covers/becomingx.jpg"/>
   <div class="song-info">
