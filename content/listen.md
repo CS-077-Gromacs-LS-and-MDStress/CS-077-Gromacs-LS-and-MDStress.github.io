@@ -10,6 +10,20 @@ An overview of music and podcasts I currently have on repeat.
 
 <section class="song-gallery">
  <div class="song-card">
+  <img alt="Becoming X Album Art" src="/assets/covers/becomingx.jpg"/>
+  <div class="song-info">
+   <span class="song-title">
+    Becoming X
+   </span>
+   <span class="artist-name">
+    Sneaker Pimps
+   </span>
+   <a class="song-link" href="https://music.youtube.com/watch?v=x6X8jHH-weE&amp;si=NffQQw6geBuBVnN4">
+    Listen
+   </a>
+  </div>
+ </div>
+ <div class="song-card">
   <img alt="Rock That Body Album Art" src="/assets/covers/rockthatbody.jpg"/>
   <div class="song-info">
    <span class="song-title">
