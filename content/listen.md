@@ -3,12 +3,27 @@ show_meta: false
 title: Listen
 ---
 
+
 An overview of music and podcasts I currently have on repeat.
 
 ## Music
 
 <section class="song-gallery">
-<div class="song-card">
+ <div class="song-card">
+  <img alt="testing Album Art" src="/assets/covers/testing.jpg"/>
+  <div class="song-info">
+   <span class="song-title">
+    testing
+   </span>
+   <span class="artist-name">
+    test
+   </span>
+   <a class="song-link" href="https://hello.com">
+    Listen
+   </a>
+  </div>
+ </div>
+ <div class="song-card">
   <img alt="Le Femme Parallel Album Art" src="/assets/covers/lefemmeparallel.jpg"/>
   <div class="song-info">
    <span class="song-title">
@@ -51,4 +66,3 @@ An overview of music and podcasts I currently have on repeat.
   </div>
  </div>
 </section>
-
