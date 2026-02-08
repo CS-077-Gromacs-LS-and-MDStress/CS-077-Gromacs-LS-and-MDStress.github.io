@@ -1,15 +1,28 @@
 ---
-show_meta: no
+show_meta: false
 title: Listen
 ---
 
-An overview of music and podcasts I currently have on repeat.
-[Checkout](blog/listen-cms/) how I manage this page to keep it current, without
-have to touch a single piece of code (until it breaks).
+
+An overview of music and podcasts I currently have on repeat. [Checkout](blog/listen-cms/) how I manage this page to keep it current, without touching a single piece of code (until it breaks).
 
 ## Music
 
 <section class="song-gallery">
+ <div class="song-card">
+  <img alt="Alone in Kyoto Album Art" src="/assets/covers/aloneinkyoto.jpg"/>
+  <div class="song-info">
+   <span class="song-title">
+    Alone in Kyoto
+   </span>
+   <span class="artist-name">
+    Air
+   </span>
+   <a class="song-link" href="https://music.youtube.com/watch?v=I0SVd_Q5wIg&amp;list=PL4-sYZ4NbVCzFZDJiMTsPBqL-aRFMLjTF">
+    Listen
+   </a>
+  </div>
+ </div>
  <div class="song-card">
   <img alt="Maggot Brain Album Art" src="/assets/covers/maggotbrain.jpg"/>
   <div class="song-info">
@@ -109,4 +122,3 @@ have to touch a single piece of code (until it breaks).
   </div>
  </div>
 </section>
-
