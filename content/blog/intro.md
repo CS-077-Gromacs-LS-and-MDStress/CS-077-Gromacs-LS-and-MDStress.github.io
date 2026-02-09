@@ -1,7 +1,7 @@
 ---
 title: Introduction: My First Blog Post
 author: Nathaniel Chappelle
-date: Mon, 09 Feb 2026 08:00:00 +0800
+date: Mon, 08 Feb 2026 23:52:00 +0800
 ---
 
 Hi there! I wanted to quickly introduce this blog/feed/website.
