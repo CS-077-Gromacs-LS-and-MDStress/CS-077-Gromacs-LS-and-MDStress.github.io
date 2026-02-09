@@ -365,7 +365,9 @@ generate_rss() {
     
     cat > "$rss_file" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss 
+  version="2.0"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
 <title>${SITE_TITLE}</title>
 <link>${SITE_URL}</link>
@@ -399,7 +401,7 @@ done | sort -r | head -n 20 | while IFS='|' read date title slug file; do
 <link>${url}</link>
 <guid>${url}</guid>
 <pubDate>${date}</pubDate>
-<author>${AUTHOR}</author>
+<dc:creator>${AUTHOR}</dc:creator>
 <description><![CDATA[
 ${body_html}
 ]]></description>

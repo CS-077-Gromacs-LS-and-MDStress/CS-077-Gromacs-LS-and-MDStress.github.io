@@ -17,6 +17,15 @@ the example here (which is also my personal site).
 
 Dependent on the lowdown markdown parser. 
 
+Notes
+-----
+
+In blog posts, which will be within the generated feed.xml, make sure to use absolute urls to adhere to RSS standards.
+
+In another vein of RSS standards, make sure to use RFC822 formatting for the date field within blog posts. 
+
+Verso2 will probably break at some point, so be ready to fix it.
+
 License
 -------
 
