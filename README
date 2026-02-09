@@ -24,7 +24,7 @@ In blog posts, which will be within the generated feed.xml, make sure to use abs
 
 In another vein of RSS standards, make sure to use RFC822 formatting for the date field within blog posts. 
 
-Verso2 will probably break at some point, so be ready to fix it.
+Verso2 will probably break at some point, so be ready to fix it. You should probably not use this if you just want something to work.
 
 License
 -------
