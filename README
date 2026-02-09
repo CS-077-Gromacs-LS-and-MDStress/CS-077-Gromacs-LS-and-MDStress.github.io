@@ -15,7 +15,7 @@ solution. Please accept my humble offering.
 Introducing verso_2. It should be self explanatory on how to use it based on 
 the example here (which is also my personal site). 
 
-Dependent on the lowdown markdown parser. 
+Dependent on the lowdown markdown parser, but could be adapted to use a plethora. 
 
 Notes
 -----
