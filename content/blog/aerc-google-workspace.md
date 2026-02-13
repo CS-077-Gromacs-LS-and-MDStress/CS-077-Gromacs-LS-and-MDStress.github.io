@@ -1,7 +1,7 @@
 ---
 title: Configuring Aerc to Work with Google Workspace via OAuth2
 author: Nathaniel Chappelle
-date: Thu, 12 Feb 2026 17:45:00 -0800
+date: Thu, 12 Feb 2026 21:45:00 -0800
 ---
 
 I recently set up aerc with Google Workspace, and like most people attempting
