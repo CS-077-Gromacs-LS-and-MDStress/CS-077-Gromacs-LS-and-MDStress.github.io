@@ -1,7 +1,7 @@
 ---
 title: Reticulum QuickStart
 author: Nathaniel Chappelle
-date: Tue, 17 Feb 2026 16:00:00 -0800
+date: Mon, 23 Feb 2026 14:11:20 -0800
 ---
 
 This document serves as a guide to quickly accessing the reticulum network with
