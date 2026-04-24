@@ -1,19 +1,8 @@
-██╗   ██╗███████╗██████╗ ███████╗ ██████╗         ██████╗ 
-██║   ██║██╔════╝██╔══██╗██╔════╝██╔═══██╗        ╚════██╗
-██║   ██║█████╗  ██████╔╝███████╗██║   ██║         █████╔╝
-╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║██║   ██║        ██╔═══╝ 
- ╚████╔╝ ███████╗██║  ██║███████║╚██████╔╝███████╗███████╗
-  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚══════╝
-
-Verso_2
+CS.077 Gromacs-LS and MDStress
 =======
 
-After creating Verso, which aimed for a spa-style site with heavy utilization 
-of javascript, I have come here to reform my ways and implement simpler 
-solution. Please accept my humble offering.
-
-Introducing verso_2. It should be self explanatory on how to use it based on 
-the example here (which is also my personal site). 
+This site uses verso_2. It should be self explanatory on how to use it once you
+read build.sh the example here (which is also my personal site). 
 
 Dependent on the lowdown markdown parser, but could be adapted to use a plethora of options. 
 
@@ -29,6 +18,6 @@ Verso2 will probably break at some point, so be ready to fix it. You should prob
 License
 -------
 
-The software in this repository is licensed under the GPLv3, which can be 
-found in LICENSE. The content in this repository is licensed under CC-BY-4.0 
+The software in this repository is licensed under the GPLv3, (C) Nathaniel Chappelle,
+which can be found in LICENSE. The content in this repository is licensed under CC-BY-4.0 
 which can be found in content/LICENSE.

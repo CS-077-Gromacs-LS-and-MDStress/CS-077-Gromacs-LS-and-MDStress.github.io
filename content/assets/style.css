@@ -1,135 +1,170 @@
 /* Layout & Typography */
-html { 
-    margin: 1em auto; 
-    max-width: 43em; 
-    font-family: sans-serif; 
-    line-height: 1.5;
-}
-body { 
-    margin: auto 8px 20px 8px; 
-    background: #fff; 
-    color: #000;
+html {
+    margin: 1em auto;
+    max-width: 43em;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* Header and Navigation (Table-based) */
-header nav table { width: 100%; border-collapse: collapse; border}
-.logo img { max-width: 3em; margin: 0; }
-.logo pre { background-color: transparent; border: none; padding: 0; margin: 0;
-    overflow: hidden; height: auto; width: auto; line-height: 1; letter-spacing: 0;
-    font-family: monospace; display: inline-block; vertical-align: middle; }
-.logo a { color: #000 !important; text-decoration: none; display: inline-block; }
-.logo a:hover { color: #000; background-color: yellow; text-decoration: none; }
-.links { text-align: right; font-weight: bold; }
-.links a { font-weight: bold; color: black; margin-left: 10px; }
+body {
+    margin: auto 8px 20px 8px;
+    background: #fff;
+    color: #1a1a1a;
+}
 
+/* Header and Navigation */
+header nav table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5em;
+}
+
+.logo pre {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    line-height: 1;
+    letter-spacing: 0;
+    font-family: monospace;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo a {
+    color: #1a1a1a !important;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.95em;
+    letter-spacing: -0.01em;
+}
+
+.logo img {
+    max-width: 20em;
+    height: auto;
+}
+
+.links {
+    text-align: right;
+    font-size: 1.5em;
+}
+
+.links a {
+    color: #555;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.links a:hover {
+    color: #0066cc;
+    background-color: transparent;
+}
 
 /* Content Headers */
-h1 { font-size: 1.8em; text-align: center; margin: 1em 0; }
-h2 { font-size: 1.6em; margin-top: 1.5em; }
-h3 { font-size: 1.05em; }
+h1 {
+    font-size: 1.7em;
+    text-align: center;
+    margin: 1em 0 0.25em 0;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111;
+}
+
+h2 {
+    font-size: 1.15em;
+    margin-top: 2em;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+}
 
 /* Metadata line */
-.meta { 
-    text-align: center; 
-    font-style: italic; 
-    color: #555; 
-    margin-bottom: 2em; 
+.meta {
+    text-align: center;
+    font-size: 0.85em;
+    color: #888;
+    margin-bottom: 2.5em;
 }
 
 /* Links */
-a { color: #000; text-decoration: underline; }
-a:hover { background-color: yellow; }
+a { color: #0066cc; text-decoration: none; }
 
 /* Code Blocks */
-pre {  
-    background-color: #eeeeee; 
-    border: 2px solid #000;
-    padding: 6px; 
-    overflow-x: auto; 
+pre {
+    background-color: #f6f8fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 0.875em;
+    line-height: 1.5;
 }
-code { background-color: #eeeeee; padding: 2px; font-family: monospace; }
-pre code { padding: 0px; background: none; }
 
-/* Tables (Post lists/File lists) */
-table { width: 100%; border-collapse: collapse; }
-#log tr:hover td, #files tr:hover td { background-color: #eeeeee; }
-#files td { font-family: monospace; font-size: 1.1em; padding: 4px 0; }
+code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    font-size: 0.875em;
+}
+
+pre code { padding: 0; background: none; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+
+table th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #666;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+#log tr:hover td,
+#files tr:hover td { background-color: #f6f8fa; }
+
+#files td {
+    font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    font-size: 0.9em;
+}
 
 /* Footer */
-footer { margin-top: 2em; border-top: 1px solid #ccc; padding-top: 1em; }
-footer table { font-style: italic; width: 100%; }
+footer {
+    margin-top: 3em;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1em;
+    font-size: 0.82em;
+    color: #888;
+}
+
+footer table { width: 100%; }
 .hosted { text-align: right; }
 
 /* Print settings */
 @media print {
-  .page-break { break-before: always; }
-  img, p { break-inside: avoid; }
-  h1, h2, h3 { break-after: avoid; }
-}
-
-/* Song Gallery Stuff */
-.song-gallery {
-    display: grid;
-    /* Fits roughly 3 columns in your 42em max-width */
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1em;
-    margin: 2em 0;
-}
-
-.song-card {
-    background: #fff;
-    border: 2px solid #000; /* Match pre block border */
-    padding: 8px; /* Give it that nested border look */
-    display: flex;
-    flex-direction: column;
-}
-
-.song-card:hover {
-    background-color: #eeeeee; /* Match table hover effect */
-    outline: 2px solid yellow; /* Hint at the link hover style */
-}
-
-.song-card img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border: 1px solid #000; /* Hard edge on art */
-    margin-bottom: 8px;
-}
-
-.song-info {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.song-title {
-    font-weight: bold;
-    font-size: 1em;
-    line-height: 1.2;
-    display: block;
-}
-
-.artist-name {
-    color: #555; /* Match .meta color */
-    font-size: 0.9em;
-    font-style: italic;
-    margin-bottom: 12px;
-}
-
-.song-link {
-    margin-top: auto;
-    text-align: center;
-    font-weight: bold;
-    font-family: monospace; /* Match your logo/code style */
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid #000;
-    padding: 4px;
-    background: #fff;
-    color: #000;
-}
-
-.song-link:hover {
-    background-color: yellow; /* The classic Verso 2 hover */
+    .page-break { break-before: always; }
+    img, p { break-inside: avoid; }
+    h1, h2, h3 { break-after: avoid; }
 }

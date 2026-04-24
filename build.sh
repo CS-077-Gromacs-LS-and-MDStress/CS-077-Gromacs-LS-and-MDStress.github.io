@@ -1,15 +1,7 @@
 #!/bin/sh
+
 # ============================================================================
-# ██╗   ██╗███████╗██████╗ ███████╗ ██████╗         ██████╗ 
-# ██║   ██║██╔════╝██╔══██╗██╔════╝██╔═══██╗        ╚════██╗
-# ██║   ██║█████╗  ██████╔╝███████╗██║   ██║         █████╔╝
-# ╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║██║   ██║        ██╔═══╝ 
-#  ╚████╔╝ ███████╗██║  ██║███████║╚██████╔╝███████╗███████╗
-#   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚══════╝ 
-# verso_2 - web framework?
-# ============================================================================
-#
-# Copyright (C) 2026 Binkd.
+# Copyright (C) 2026 binkd (Nathaniel Chappelle)
 #
 # This file is part of verso_2.
 #
@@ -25,7 +17,6 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with verso_2. If not, see <https://www.gnu.org/licenses/>.
-#
 # =============================================================================
 
 set -e
@@ -245,8 +236,10 @@ generate_nav() {
         echo "$nav_html"
         nav_html=""
     done
-	
-    echo "                <a href=\"/feed.xml\">RSS Feed</a>"
+
+    if [ "$GENERATE_RSS" = "yes" ]; then
+        echo "                <a href=\"/feed.xml\">RSS Feed</a>"
+    fi	
     echo "		  <a href=\"${AUTHOR_GIT_HOST}\">Git</a>"
 }
 
