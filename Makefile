@@ -2,10 +2,12 @@
 
 .POSIX:
 
-all: build
+all: site
 
-build:
+site:
 	./build.sh
+
+build: site
 
 clean:
 	rm -rf dist
