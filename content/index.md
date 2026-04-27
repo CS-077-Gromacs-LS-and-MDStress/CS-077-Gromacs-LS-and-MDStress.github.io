@@ -29,7 +29,10 @@ Other dependencies include:
 
 ## Capstone group
 ### Abdul Raziq
+Abdul Raziq is a junior at Oregon State University studying Computer Science with a focus on performance engineering and scientific computing. His work centers on optimizing high-performance systems, including molecular dynamics simulations. As part of the GROMACS-LS capstone project, he contributes to performance optimization, SIMD acceleration, and integration with advanced libraries such as MDStress and etc
 
+Portfolio: https://web.engr.oregonstate.edu/~razika/Personal%20Portfolio/
+GitHub: https://github.com/ARB726
 ### Nathaniel Chappelle
 
 ### Joo Wang Lee
