@@ -28,20 +28,32 @@ Other dependencies include:
 # Team Members
 
 ## Capstone group
+
 ### Abdul Raziq
 Abdul Raziq is a junior at Oregon State University studying Computer Science with a focus on performance engineering and scientific computing. His work centers on optimizing high-performance systems, including molecular dynamics simulations. As part of the GROMACS-LS capstone project, he contributes to performance optimization, SIMD acceleration, and integration with advanced libraries such as MDStress and etc
 
 Portfolio: https://web.engr.oregonstate.edu/~razika/Personal%20Portfolio/
 GitHub: https://github.com/ARB726
+
 ### Nathaniel Chappelle
+
+Nathaniel is a senior at Oregon State University with industry experience in the semiconductor field, spanning both industrial automation and electronic design automation (EDA). As part of the GROMACS-LS project, he primarily contributed to porting the codebase from version 2016.3 to 2025.4, working across both the simulation harness and the compute kernels.
+
+Links: 
+
+- [chappelle.dev](https://chappelle.dev)
+- [codeberg.org](https://codeberg.org/binkd)
 
 ### Joo Wang Lee
 
 ### Finlay Curtiss
+
 Finlay is a senior at Oregon State University studying Computer Science and Environmental Science.
 
 ## Project partner
+
 ### Dr. Juan Vanegas
+
 Associate Professor of Biochemistry & Biophysics at Oregon State University
 
 
