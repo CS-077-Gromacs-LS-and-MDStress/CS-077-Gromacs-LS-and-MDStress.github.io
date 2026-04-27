@@ -29,9 +29,13 @@ Other dependencies include:
 
 ## Capstone group
 ### Abdul Raziq
+
 ### Nathaniel Chappelle
+
 ### Joo Wang Lee
+
 ### Finlay Curtiss
+Finlay is a senior at Oregon State University studying Computer Science and Environmental Science.
 
 ## Project partner
 ### Dr. Juan Vanegas
