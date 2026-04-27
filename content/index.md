@@ -46,6 +46,8 @@ Links:
 
 ### Joo Wang Lee
 
+Joo Wang Lee is a senior at Oregon State University majoring in Applied Computer Science with a focus in Data Science.
+
 ### Finlay Curtiss
 
 Finlay is a senior at Oregon State University studying Computer Science and Environmental Science.
