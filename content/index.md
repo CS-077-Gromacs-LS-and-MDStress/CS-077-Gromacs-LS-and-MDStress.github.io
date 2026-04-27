@@ -16,7 +16,8 @@ Other highlights of GROMACS-LS:
 - Recently updated to be based on the 2025.4 branch of GROMACS (up from 2016.3)
 
 ## Demo video
-[Link demo or include a photo of a test run here]
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/y45oI0CQ5Cw?si=J-MyRbFJc1QFrLb5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # How to use GROMACS-LS
 Steps to install and use GROMACS-LS can be found on the GitHub page, [GROMACS-LS](https://github.com/vanegasj/gromacs-ls). The primary dependency for GROMACS-LS is the [MDStress library](https://github.com/vanegasj/mdstress-library).
