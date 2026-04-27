@@ -1,9 +1,10 @@
 ---
-title: CS.077 Gromacs-LS and MDStress
+title: CS.077 GROMACS-LS and MDStress
 show_meta: no
 ---
-
-Gromacs-LS is a research fork of [Gromacs](https://www.gromacs.org) that aims
+# About GROMACS-LS
+## What is GROMACS-LS?
+GROMACS-LS is a research fork of the widely used molecular dynamics simulation [GROMACS](https://www.gromacs.org) that aims
 to implement local stress and elasticity calculations via the [MDStress Library](https://github.com/vanegasj/mdstress-library).
 
-<!-- Test commit: verifying push access (2)-->
+
